@@ -35,7 +35,6 @@ local servers = {
 			},
 		},
 	},
-
 	pyright = {},
 	gopls = {},
 	rust_analyzer = {},
@@ -44,6 +43,12 @@ local servers = {
 		single_file_support = true,
 	},
 	tsserver = {}, -- lsp is with tsc
+	cssls = {},
+	tailwindcss = {},
+	html = {},
+	svelte = {},
+	emmet_ls = {},
+
 	-- server scripting stuff
 }
 
