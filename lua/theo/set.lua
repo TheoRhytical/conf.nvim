@@ -82,6 +82,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Set tab size
+-- NOTE: When possible, always enforce tabs for a11y
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
