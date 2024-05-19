@@ -45,10 +45,23 @@ local servers = {
 	tsserver = {}, -- lsp is with tsc
 	cssls = {},
 	tailwindcss = {},
-	html = {},
+	html = {
+		filetypes = { "html", "tmpl", "php", "twig" },
+	},
 	svelte = {},
 	emmet_ls = {
-		filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+		filetypes = {
+			"html",
+			"typescriptreact",
+			"javascriptreact",
+			"css",
+			"sass",
+			"scss",
+			"less",
+			"svelte",
+			"twig",
+			"php",
+		},
 	},
 	marksman = {},
 
