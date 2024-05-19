@@ -41,7 +41,7 @@ return { -- Autoformat
 			html = { "prettier" },
 			json = { "prettier" },
 			yaml = { "prettier" },
-			markdown = { "prettier" },
+			-- markdown = { "prettier" },
 			python = { "isort", "black" },
 		},
 	},
