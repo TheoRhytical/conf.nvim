@@ -64,6 +64,7 @@ local servers = {
 		},
 	},
 	marksman = {},
+	jsonls = {},
 
 	-- server scripting stuff
 }
