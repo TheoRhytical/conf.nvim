@@ -46,11 +46,13 @@ local servers = {
 	cssls = {},
 	tailwindcss = {},
 	html = {
-		filetypes = { "html", "tmpl", "php", "twig" },
+		filetypes = { "html", "gotmpl", "template", "php", "twig" },
 	},
 	svelte = {},
 	emmet_ls = {
 		filetypes = {
+			"gotmpl",
+			"template",
 			"html",
 			"typescriptreact",
 			"javascriptreact",
@@ -65,6 +67,7 @@ local servers = {
 	},
 	marksman = {},
 	jsonls = {},
+	clangd = {},
 
 	-- server scripting stuff
 }
@@ -132,8 +135,12 @@ return { -- LSP Configuration & Plugins
 				--  To jump back, press <C-t>.
 				-- map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 				map("gd", function()
-					require("telescope.builtin").lsp_definitions({ jump_type = "vsplit" })
+					require("telescope.builtin").lsp_definitions({ jump_type = "tab" })
 				end, "[G]oto [D]efinition")
+
+				vim.keymap.set("n", "tc", ":tabclose<CR>", { desc = "[T]ab: [C]lose" })
+				vim.keymap.set("n", "tl", ":tabnext<CR>", { desc = "[T]ab: Right" })
+				vim.keymap.set("n", "th", ":tabnext -<CR>", { desc = "[T]ab: Left" })
 
 				-- Find references for the word under your cursor.
 				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
