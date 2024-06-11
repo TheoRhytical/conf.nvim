@@ -63,11 +63,14 @@ local servers = {
 			"svelte",
 			"twig",
 			"php",
+			"typescript",
 		},
 	},
 	marksman = {},
 	jsonls = {},
 	clangd = {},
+	angularls = {},
+	eslint = {},
 
 	-- server scripting stuff
 }
