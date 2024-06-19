@@ -11,7 +11,6 @@ return {
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
 			"nvim-neotest/nvim-nio",
-			"leoluz/nvim-dap-go",
 			{
 				"microsoft/vscode-js-debug",
 				build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
@@ -48,7 +47,6 @@ return {
 			local dap = require("dap")
 			local dapui = require("dapui")
 
-			require("dap-go").setup()
 			dapui.setup()
 
 			for _, language in ipairs(js_based_languages) do
@@ -160,6 +158,14 @@ return {
 				":lua require('dapui').open({reset = true})<CR>",
 				{ noremap = true, desc = "[D]ebug UI [R]eset" }
 			)
+		end,
+	},
+	{
+		"leoluz/nvim-dap-go",
+		ft = "go",
+		dependencies = "mfussenegger/nvim-dap",
+		config = function(_, opts)
+			require("dap-go").setup(opts)
 		end,
 	},
 }
