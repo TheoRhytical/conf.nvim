@@ -21,7 +21,19 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
--- vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = {
+	name = "xclip",
+	copy = {
+		["+"] = "xclip -selection clipboard -in",
+		["*"] = "xclip -selection primary -in",
+	},
+	paste = {
+		["+"] = "xclip -selection clipboard -out",
+		["*"] = "xclip -selection primary -out",
+	},
+	cache_enabled = 0,
+}
 
 -- Enable break indent
 vim.opt.breakindent = true
